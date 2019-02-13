@@ -41,8 +41,13 @@ steps:
     zipAfterPublish: True
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact'
+  displayName: 'Publish Web App'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish ARM Templates'
+  inputs:
+    PathtoPublish: './arm'
 
 
